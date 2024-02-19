@@ -69,11 +69,11 @@ export default function App() {
       />
       <Button onPress={calculateF} title="Розрахувати" />
       <Text style={styles.result}>{result}</Text>
-      <Button onPress={showAuthorInfo} title="Показати інформацію про автора" />
       <Text style={styles.authorInfo}>{authorInfo}</Text>
       {showAuthorPhoto && (
         <Image source={authorImage} style={styles.authorImage} />
       )}
+      <Button onPress={showAuthorInfo} title="Показати інформацію про автора" />
       <StatusBar style="auto" />
     </View>
   );
