@@ -39,15 +39,20 @@ export default function App() {
   };
 
   const showAuthorInfo = () => {
-    setAuthorInfo(
-      'Автор: Кічак Богдан Володимирович, Факультет інформаційних технологій, 4 курс, 22004бск'
-    );
-    setShowAuthorPhoto(true); // Показати фото автора після натискання кнопки
+    if (authorInfo || showAuthorPhoto) {
+      setAuthorInfo('');
+      setShowAuthorPhoto(false);
+    } else {
+      setAuthorInfo(
+        'Автор: Кічак Богдан Володимирович, Факультет інформаційних технологій, 4 курс, КН22004бск'
+      );
+      setShowAuthorPhoto(true);
+    }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Моя додаток калькулятор</Text>
+      <Text style={styles.header}>Розрахунок прикладу</Text>
       <TextInput
         style={styles.input}
         onChangeText={(text) => setX(text)}
